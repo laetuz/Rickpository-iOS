@@ -13,6 +13,15 @@
 		87BAB59F2C32F73E0065AAE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BAB59E2C32F73E0065AAE0 /* Preview Assets.xcassets */; };
 		87BAB5C02C32FCAA0065AAE0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 87BAB5BF2C32FCAA0065AAE0 /* RealmSwift */; };
 		87BAB5C32C32FD4B0065AAE0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 87BAB5C22C32FD4B0065AAE0 /* Alamofire */; };
+		87BAB5C82C32FE470065AAE0 /* RickRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5C72C32FE470065AAE0 /* RickRepository.swift */; };
+		87BAB5D12C32FEE10065AAE0 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5D02C32FEE10065AAE0 /* CharacterModel.swift */; };
+		87BAB5D42C32FF500065AAE0 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5D32C32FF500065AAE0 /* CharacterResponse.swift */; };
+		87BAB5D62C32FF6C0065AAE0 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5D52C32FF6C0065AAE0 /* RemoteDataSource.swift */; };
+		87BAB5DB2C32FFCF0065AAE0 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5DA2C32FFCF0065AAE0 /* APICall.swift */; };
+		87BAB5DE2C3300AC0065AAE0 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5DD2C3300AC0065AAE0 /* CustomError.swift */; };
+		87BAB5E12C3302110065AAE0 /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5E02C3302110065AAE0 /* CharacterEntity.swift */; };
+		87BAB5E32C3302270065AAE0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5E22C3302270065AAE0 /* LocalDataSource.swift */; };
+		87BAB5E52C33039A0065AAE0 /* CharacterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5E42C33039A0065AAE0 /* CharacterMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +43,15 @@
 		87BAB5992C32F73D0065AAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87BAB59E2C32F73E0065AAE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87BAB5C72C32FE470065AAE0 /* RickRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickRepository.swift; sourceTree = "<group>"; };
+		87BAB5D02C32FEE10065AAE0 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		87BAB5D32C32FF500065AAE0 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
+		87BAB5D52C32FF6C0065AAE0 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		87BAB5DA2C32FFCF0065AAE0 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		87BAB5DD2C3300AC0065AAE0 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		87BAB5E02C3302110065AAE0 /* CharacterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
+		87BAB5E22C3302270065AAE0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		87BAB5E42C33039A0065AAE0 /* CharacterMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,8 @@
 		87BAB5962C32F73D0065AAE0 /* Rickpository */ = {
 			isa = PBXGroup;
 			children = (
+				87BAB5C52C32FDF40065AAE0 /* Core */,
+				87BAB5C42C32FDEF0065AAE0 /* App */,
 				87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */,
 				87BAB5992C32F73D0065AAE0 /* ContentView.swift */,
 				87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */,
@@ -90,6 +110,133 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87BAB5C42C32FDEF0065AAE0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		87BAB5C52C32FDF40065AAE0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5D72C32FFB00065AAE0 /* Utils */,
+				87BAB5CD2C32FEA90065AAE0 /* DI */,
+				87BAB5CC2C32FE9B0065AAE0 /* Domain */,
+				87BAB5C62C32FE150065AAE0 /* Data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		87BAB5C62C32FE150065AAE0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5CA2C32FE5A0065AAE0 /* Remote */,
+				87BAB5C92C32FE540065AAE0 /* Local */,
+				87BAB5C72C32FE470065AAE0 /* RickRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		87BAB5C92C32FE540065AAE0 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5DF2C3301FE0065AAE0 /* Entity */,
+				87BAB5E22C3302270065AAE0 /* LocalDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		87BAB5CA2C32FE5A0065AAE0 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5D22C32FF460065AAE0 /* Response */,
+				87BAB5D52C32FF6C0065AAE0 /* RemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		87BAB5CC2C32FE9B0065AAE0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5CF2C32FED50065AAE0 /* Model */,
+				87BAB5CE2C32FECB0065AAE0 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		87BAB5CD2C32FEA90065AAE0 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		87BAB5CE2C32FECB0065AAE0 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		87BAB5CF2C32FED50065AAE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5D02C32FEE10065AAE0 /* CharacterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87BAB5D22C32FF460065AAE0 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5D32C32FF500065AAE0 /* CharacterResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		87BAB5D72C32FFB00065AAE0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5DC2C33009C0065AAE0 /* Extensions */,
+				87BAB5D92C32FFC20065AAE0 /* Network */,
+				87BAB5D82C32FFB50065AAE0 /* Mapper */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		87BAB5D82C32FFB50065AAE0 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5DA2C32FFCF0065AAE0 /* APICall.swift */,
+				87BAB5E42C33039A0065AAE0 /* CharacterMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		87BAB5D92C32FFC20065AAE0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		87BAB5DC2C33009C0065AAE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5DD2C3300AC0065AAE0 /* CustomError.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87BAB5DF2C3301FE0065AAE0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				87BAB5E02C3302110065AAE0 /* CharacterEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87BAB5E32C3302270065AAE0 /* LocalDataSource.swift in Sources */,
+				87BAB5C82C32FE470065AAE0 /* RickRepository.swift in Sources */,
+				87BAB5E12C3302110065AAE0 /* CharacterEntity.swift in Sources */,
+				87BAB5DE2C3300AC0065AAE0 /* CustomError.swift in Sources */,
+				87BAB5D12C32FEE10065AAE0 /* CharacterModel.swift in Sources */,
+				87BAB5D42C32FF500065AAE0 /* CharacterResponse.swift in Sources */,
 				87BAB59A2C32F73D0065AAE0 /* ContentView.swift in Sources */,
+				87BAB5D62C32FF6C0065AAE0 /* RemoteDataSource.swift in Sources */,
+				87BAB5DB2C32FFCF0065AAE0 /* APICall.swift in Sources */,
 				87BAB5982C32F73D0065AAE0 /* RickpositoryApp.swift in Sources */,
+				87BAB5E52C33039A0065AAE0 /* CharacterMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

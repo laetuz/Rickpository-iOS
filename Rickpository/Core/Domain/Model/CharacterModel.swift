@@ -14,4 +14,10 @@ struct CharacterModel: Equatable, Identifiable {
     let species: String
     let gender: String
     let image: String
+//    let origin: OriginModel
 }
+
+//struct OriginModel: Equatable {
+//    let name: String
+//    let url: String
+//}

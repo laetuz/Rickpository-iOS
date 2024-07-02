@@ -12,14 +12,6 @@ struct CharactersResponse: Decodable {
 }
 
 struct CharacterResponse: Decodable {
-    private enum CodingKeys: String, CodingKey {
-      case id = "id"
-      case name = "name"
-        case status = "status"
-        case species = "species"
-        case gender = "gender"
-      case image = "image"
-    }
     
     let id: Int?
     let name: String?
@@ -27,4 +19,22 @@ struct CharacterResponse: Decodable {
     let species: String?
     let gender: String?
     let image: String?
+    let origin: OriginResponse?
+    
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case status
+        case species
+        case gender
+        case image
+        case origin
+    }
+    
+    struct OriginResponse: Decodable {
+        let name: String?
+        let url: String?
+    }
+
 }
+

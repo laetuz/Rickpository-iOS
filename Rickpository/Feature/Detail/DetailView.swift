@@ -69,6 +69,7 @@ extension DetailView {
             Text("\(char.name)")
             Text("\(char.species)")
             Text("\(char.status)")
+            Text("\(char.origin?.name)")
         }
     }
 }

@@ -22,25 +22,19 @@ final class CharacterMapper {
         }
     }
     
+    
     static func mapCharacterEntitiesToDomains(
         input characterEntities: [CharacterEntity]
     ) -> [CharacterModel] {
         return characterEntities.map { result in
-            return CharacterModel(id: result.id, name: result.name, status: result.status, species: result.species, gender: result.gender, image: result.image)
-        }
-    }
-    
-    static func mapCharacterResponsesToDomains(
-        input characterResponses: [CharacterResponse]
-    ) -> [CharacterModel] {
-        return characterResponses.map { result in
             return CharacterModel(
-                id: result.id ?? 0,
-                name: result.name ?? "",
-                status: result.status ?? "",
-                species: result.species ?? "",
-                gender: result.gender ?? "",
-                image: result.image ?? ""
+                id: result.id,
+                name: result.name,
+                status: result.status,
+                species: result.species,
+                gender: result.gender,
+                image: result.image,
+                origin: result.origin
             )
         }
     }

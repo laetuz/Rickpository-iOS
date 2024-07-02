@@ -14,10 +14,20 @@ struct CharacterModel: Equatable, Identifiable {
     let species: String
     let gender: String
     let image: String
-//    let origin: OriginModel
+    let origin: Origin?
+    
+    struct Origin: Equatable {
+        let name: String
+        let url: String
+    }
+    
+    init(id: Int, name: String, status: String, species: String, gender: String, image: String, origin: OriginEntity?) {
+        self.id = id
+        self.name = name
+        self.status = status
+        self.species = species
+        self.gender = gender
+        self.image = image
+        self.origin = origin.map { Origin(name: $0.name, url: $0.url)}
+    }
 }
-
-//struct OriginModel: Equatable {
-//    let name: String
-//    let url: String
-//}

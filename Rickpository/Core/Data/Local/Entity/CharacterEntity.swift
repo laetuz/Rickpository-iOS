@@ -15,8 +15,14 @@ class CharacterEntity: Object {
     @objc dynamic var species: String = ""
     @objc dynamic var gender: String = ""
     @objc dynamic var image: String = ""
+    @objc dynamic var origin: OriginEntity?
     
     override static func primaryKey() -> String? {
         return "id"
     }
+}
+
+class OriginEntity: Object {
+    @objc dynamic var name: String = ""
+    @objc dynamic var url: String = ""
 }

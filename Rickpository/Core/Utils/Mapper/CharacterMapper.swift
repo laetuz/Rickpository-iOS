@@ -42,8 +42,27 @@ final class CharacterMapper {
                 species: result.species,
                 gender: result.gender,
                 image: result.image,
-                origin: result.origin
+                origin: result.origin,
+                favorite: result.favorite
             )
         }
+    }
+    
+    static func mapCharacterEntitiesToDomainsFav(
+        input characterEntity: CharacterEntity
+    ) -> CharacterModel {
+        return CharacterModel(id: characterEntity.id, name: characterEntity.name, status: characterEntity.status, species: characterEntity.species, gender: characterEntity.gender, image: characterEntity.image, origin: characterEntity.origin, favorite: characterEntity.favorite)
+//        return characterEntities.map { result in
+//            return CharacterModel(
+//                id: result.id,
+//                name: result.name,
+//                status: result.status,
+//                species: result.species,
+//                gender: result.gender,
+//                image: result.image,
+//                origin: result.origin,
+//                favorite: result.favorite
+//            )
+//        }
     }
 }

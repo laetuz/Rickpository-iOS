@@ -12,6 +12,7 @@ import Combine
 protocol LocalDataSourceProtocol: AnyObject {
     func getCharacters() -> AnyPublisher<[CharacterEntity], Error>
     func addCharacters(from characters: [CharacterEntity]) -> AnyPublisher<Bool, Error>
+    func addFavorite(by id: Int) -> AnyPublisher<CharacterEntity, Error>
 }
 
 final class LocalDataSource: NSObject {
@@ -51,6 +52,25 @@ extension LocalDataSource: LocalDataSourceProtocol {
                         }
                         completion(.success(true))
                     }
+                } catch {
+                    completion(.failure(DatabaseError.requestFailed))
+                }
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func addFavorite(by id: Int) -> AnyPublisher<CharacterEntity, Error> {
+        return Future<CharacterEntity, Error> { completion in
+            if let realm = self.realm, let charEntity = {
+                realm.objects(CharacterEntity.self).filter("id = \(id)")
+            }().first {
+                do {
+                    try realm.write {
+                        charEntity.setValue(!charEntity.favorite, forKey: "favorite")
+                    }
+                    completion(.success(charEntity))
                 } catch {
                     completion(.failure(DatabaseError.requestFailed))
                 }

@@ -21,12 +21,24 @@ struct DetailView: View {
                 ScrollView(.vertical) {
                     VStack() {
                         imageCategory
-                        spacer
+                        Spacer()
+                        if viewModel.character.favorite {
+                            CustomIcon(imageName: "heart.fill", title: "Favorited")
+                                .onTapGesture {
+                                    self.viewModel.addFavorite()
+                                }
+                        } else {
+                            CustomIcon(imageName: "heart", title: "Favorite")
+                                .onTapGesture {
+                                    self.viewModel.addFavorite()
+                                }
+                        }
+                        Spacer()
                         HStack {
                             content
-                            spacer
+                            Spacer()
                         }.padding([.leading, .trailing])
-                        spacer
+                        Spacer()
                     }
                     .padding()
                     
@@ -37,9 +49,6 @@ struct DetailView: View {
 }
 
 extension DetailView {
-    var spacer: some View {
-        Spacer()
-    }
 
     var loadingIndicator: some View {
         VStack {

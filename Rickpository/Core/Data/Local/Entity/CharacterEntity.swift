@@ -16,6 +16,7 @@ class CharacterEntity: Object {
     @objc dynamic var gender: String = ""
     @objc dynamic var image: String = ""
     @objc dynamic var origin: OriginEntity?
+    @objc dynamic var favorite: Bool = false
     
     override static func primaryKey() -> String? {
         return "id"

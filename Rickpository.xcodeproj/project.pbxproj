@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		878A87AE2C356DDD001604D0 /* Custom View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87AD2C356DDD001604D0 /* Custom View.swift */; };
 		87BAB5982C32F73D0065AAE0 /* RickpositoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */; };
 		87BAB59A2C32F73D0065AAE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5992C32F73D0065AAE0 /* ContentView.swift */; };
 		87BAB59C2C32F73E0065AAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		878A87AD2C356DDD001604D0 /* Custom View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom View.swift"; sourceTree = "<group>"; };
 		87BAB5942C32F73D0065AAE0 /* Rickpository.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickpository.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickpositoryApp.swift; sourceTree = "<group>"; };
 		87BAB5992C32F73D0065AAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				87BAB5DC2C33009C0065AAE0 /* Extensions */,
 				87BAB5D92C32FFC20065AAE0 /* Network */,
 				87BAB5D82C32FFB50065AAE0 /* Mapper */,
+				878A87AD2C356DDD001604D0 /* Custom View.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				87BAB5F22C33094B0065AAE0 /* HomeViewModel.swift in Sources */,
 				87BAB5FB2C330A620065AAE0 /* DetailRouter.swift in Sources */,
 				87BAB5EF2C3308AC0065AAE0 /* HomeView.swift in Sources */,
+				878A87AE2C356DDD001604D0 /* Custom View.swift in Sources */,
 				87BAB5DE2C3300AC0065AAE0 /* CustomError.swift in Sources */,
 				87BAB5F92C330A5A0065AAE0 /* DetailViewModel.swift in Sources */,
 				87BAB5D12C32FEE10065AAE0 /* CharacterModel.swift in Sources */,

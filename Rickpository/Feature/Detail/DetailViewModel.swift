@@ -23,4 +23,18 @@ class DetailViewModel: ObservableObject {
         self.detailUseCase = detailUseCase
         character = detailUseCase.getCharacter()
     }
+    
+    func addFavorite() {
+        detailUseCase.favCharacter()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case.failure: self.errorMessage = String(describing: completion)
+                case .finished: self.isLoading = false
+                }
+            }, receiveValue: { char in
+                self.character = char
+            })
+            .store(in: &cancellables)
+    }
 }

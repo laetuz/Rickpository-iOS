@@ -12,26 +12,27 @@ struct DetailView: View {
     @ObservedObject var viewModel: DetailViewModel
     
     var body: some View {
-      ZStack {
-          if viewModel.isLoading {
-          loadingIndicator
-        } else if viewModel.isLoading {
-          errorIndicator
-        } else {
-          ScrollView(.vertical) {
-            VStack {
-              imageCategory
-              spacer
-              content
-              spacer
-            }.padding()
-          }
-        }
-      }.onAppear {
-      //  if self.viewModel.meals.count == 0 {
-       //   self.presenter.getMeals()
-     //   }
-      }//.navigationBarTitle(Text(self.presenter.category.title), displayMode: .large)
+        ZStack {
+            if viewModel.isLoading {
+                loadingIndicator
+            } else if viewModel.isLoading {
+                errorIndicator
+            } else {
+                ScrollView(.vertical) {
+                    VStack() {
+                        imageCategory
+                        spacer
+                        HStack {
+                            content
+                            spacer
+                        }.padding([.leading, .trailing])
+                        spacer
+                    }
+                    .padding()
+                    
+                }
+            }
+        }.navigationBarTitle(Text(self.viewModel.character.name), displayMode: .inline)
     }
 }
 
@@ -60,16 +61,27 @@ extension DetailView {
         } placeholder: {
             ProgressView()
         }.scaledToFit().frame(width: 250.0, height: 250.0, alignment: .center)
+            .cornerRadius(12)
+    }
+    
+    func mediumTitle(_ title: String) -> some View {
+        Text(title).font(.headline)
     }
     
     var content: some View {
-        var char = viewModel.character
+        let char = viewModel.character
         return VStack(alignment: .leading, spacing: 0) {
+
+            mediumTitle("ID").padding([.top])
             Text("\(char.id)")
+            mediumTitle("Name").padding([.top])
             Text("\(char.name)")
+            mediumTitle("Species").padding([.top])
             Text("\(char.species)")
+            mediumTitle("Status").padding([.top])
             Text("\(char.status)")
-            Text("\(char.origin?.name)")
+            mediumTitle("Origin").padding([.top])
+            Text("\(char.origin?.name ?? "Unknown")")
         }
     }
 }

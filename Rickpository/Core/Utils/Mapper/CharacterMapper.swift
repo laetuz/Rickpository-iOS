@@ -9,15 +9,23 @@ import Foundation
 
 final class CharacterMapper {
     static func mapCharacterResponsesToEntities(
-        input characterRespones: [CharacterResponse]
+        input characterResponses: [CharacterResponse]
     ) -> [CharacterEntity] {
-        return characterRespones.map { result in
+        return characterResponses.map { result in
             let newCharacter = CharacterEntity()
             newCharacter.id = result.id ?? 0
             newCharacter.name = result.name ?? ""
             newCharacter.status = result.status ?? ""
             newCharacter.species = result.species ?? ""
             newCharacter.image = result.image ?? ""
+            
+            if let originResponse = result.origin {
+                let originEntity = OriginEntity()
+                originEntity.name = result.origin?.name ?? ""
+                originEntity.url = result.origin?.url ?? ""
+                newCharacter.origin = originEntity
+            }
+            
             return newCharacter
         }
     }

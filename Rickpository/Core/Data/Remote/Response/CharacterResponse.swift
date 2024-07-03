@@ -34,7 +34,14 @@ struct CharacterResponse: Decodable {
     struct OriginResponse: Decodable {
         let name: String?
         let url: String?
+        
+        enum CodingKeys: CodingKey {
+            case name
+            case url
+        }
     }
+
+
 
 }
 

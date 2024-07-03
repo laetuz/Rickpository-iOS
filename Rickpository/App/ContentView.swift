@@ -24,6 +24,11 @@ struct ContentView: View {
             }.tabItem {
                 TabItem(imageName: "star", title: "Favorite")
             }
+            NavigationStack {
+                AboutView()
+            }.tabItem {
+                TabItem(imageName: "person", title: "About")
+            }
         }
     }
 }

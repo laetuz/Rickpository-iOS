@@ -12,6 +12,7 @@
 		878A87B32C358128001604D0 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B22C358128001604D0 /* FavoriteViewModel.swift */; };
 		878A87B52C3581C1001604D0 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B42C3581C1001604D0 /* FavoriteInteractor.swift */; };
 		878A87B72C358576001604D0 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B62C358576001604D0 /* FavoriteRouter.swift */; };
+		878A87BB2C35CBB8001604D0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87BA2C35CBB8001604D0 /* AboutView.swift */; };
 		87BAB5982C32F73D0065AAE0 /* RickpositoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */; };
 		87BAB59A2C32F73D0065AAE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5992C32F73D0065AAE0 /* ContentView.swift */; };
 		87BAB59C2C32F73E0065AAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		878A87B22C358128001604D0 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		878A87B42C3581C1001604D0 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 		878A87B62C358576001604D0 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
+		878A87BA2C35CBB8001604D0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		87BAB5942C32F73D0065AAE0 /* Rickpository.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickpository.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickpositoryApp.swift; sourceTree = "<group>"; };
 		87BAB5992C32F73D0065AAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 				878A87B62C358576001604D0 /* FavoriteRouter.swift */,
 			);
 			path = Favorite;
+			sourceTree = "<group>";
+		};
+		878A87B92C35CBAE001604D0 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				878A87BA2C35CBB8001604D0 /* AboutView.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		87BAB58B2C32F73D0065AAE0 = {
@@ -293,6 +303,7 @@
 		87BAB5EC2C3308910065AAE0 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				878A87B92C35CBAE001604D0 /* About */,
 				878A87AF2C3580B9001604D0 /* Favorite */,
 				87BAB5F52C330A3C0065AAE0 /* Detail */,
 				87BAB5ED2C33089E0065AAE0 /* Home */,
@@ -410,6 +421,7 @@
 				87BAB5E12C3302110065AAE0 /* CharacterEntity.swift in Sources */,
 				87BAB5F22C33094B0065AAE0 /* HomeViewModel.swift in Sources */,
 				87BAB5FB2C330A620065AAE0 /* DetailRouter.swift in Sources */,
+				878A87BB2C35CBB8001604D0 /* AboutView.swift in Sources */,
 				87BAB5EF2C3308AC0065AAE0 /* HomeView.swift in Sources */,
 				878A87B32C358128001604D0 /* FavoriteViewModel.swift in Sources */,
 				878A87AE2C356DDD001604D0 /* Custom View.swift in Sources */,

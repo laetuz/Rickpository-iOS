@@ -27,4 +27,9 @@ final class Injection: NSObject {
       let repository = provideRepository()
       return DetailInteractor(repository: repository, character: character)
     }
+    
+    func provideFavorite() -> FavoriteUseCase {
+        let repo = provideRepository()
+        return FavoriteInteractor(repo: repo)
+    }
 }

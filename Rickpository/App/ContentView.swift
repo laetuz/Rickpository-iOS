@@ -10,6 +10,7 @@ import Realm
 
 struct ContentView: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
+    @EnvironmentObject var favViewModel: FavoriteViewModel
     
     var body: some View {
         TabView {
@@ -17,6 +18,11 @@ struct ContentView: View {
                 HomeView(viewModel: homeViewModel)
             }.tabItem {
                 TabItem(imageName: "house", title: "Home")
+            }
+            NavigationStack {
+                FavoriteView(viewModel: favViewModel)
+            }.tabItem {
+                TabItem(imageName: "star", title: "Favorite")
             }
         }
     }

@@ -13,6 +13,7 @@ protocol LocalDataSourceProtocol: AnyObject {
     func getCharacters() -> AnyPublisher<[CharacterEntity], Error>
     func addCharacters(from characters: [CharacterEntity]) -> AnyPublisher<Bool, Error>
     func addFavorite(by id: Int) -> AnyPublisher<CharacterEntity, Error>
+    func getFavoriteCharacters() -> AnyPublisher<[CharacterEntity], Error>
 }
 
 final class LocalDataSource: NSObject {
@@ -78,6 +79,22 @@ extension LocalDataSource: LocalDataSourceProtocol {
                 completion(.failure(DatabaseError.invalidInstance))
             }
         }.eraseToAnyPublisher()
+    }
+    
+    func getFavoriteCharacters() -> AnyPublisher<[CharacterEntity], Error> {
+        return Future<[CharacterEntity], Error> { completion in
+            if let realm = self.realm {
+                let entities = {
+                    realm.objects(CharacterEntity.self)
+                        .filter("favorite = \(true)")
+                        .sorted(byKeyPath: "name", ascending: true)
+                }()
+                completion(.success(entities.toArray(ofType: CharacterEntity.self)))
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }
+        .eraseToAnyPublisher()
     }
 }
 

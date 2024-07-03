@@ -11,6 +11,7 @@ import Combine
 protocol RickRepositoryProtocol {
     func getCharacters() -> AnyPublisher<[CharacterModel], Error>
     func favCharacter(by id: Int) -> AnyPublisher<CharacterModel, Error>
+    func getFavorite() -> AnyPublisher<[CharacterModel], Error>
 }
 
 final class RickRepository: NSObject {
@@ -55,6 +56,12 @@ extension RickRepository: RickRepositoryProtocol {
     func favCharacter(by id: Int) -> AnyPublisher<CharacterModel, any Error> {
         return self.local.addFavorite(by: id)
             .map { CharacterMapper.mapCharacterEntitiesToDomainsFav(input: $0)}
+            .eraseToAnyPublisher()
+    }
+    
+    func getFavorite() -> AnyPublisher<[CharacterModel], any Error> {
+        return self.local.getFavoriteCharacters()
+            .map { CharacterMapper.mapCharacterEntitiesToDomains(input: $0)}
             .eraseToAnyPublisher()
     }
 }

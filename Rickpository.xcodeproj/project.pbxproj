@@ -13,6 +13,7 @@
 		878A87B52C3581C1001604D0 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B42C3581C1001604D0 /* FavoriteInteractor.swift */; };
 		878A87B72C358576001604D0 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B62C358576001604D0 /* FavoriteRouter.swift */; };
 		878A87BB2C35CBB8001604D0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87BA2C35CBB8001604D0 /* AboutView.swift */; };
+		878A87BF2C366E72001604D0 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 878A87BE2C366E72001604D0 /* codemagic.yaml */; };
 		87BAB5982C32F73D0065AAE0 /* RickpositoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */; };
 		87BAB59A2C32F73D0065AAE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5992C32F73D0065AAE0 /* ContentView.swift */; };
 		87BAB59C2C32F73E0065AAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		878A87B42C3581C1001604D0 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 		878A87B62C358576001604D0 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		878A87BA2C35CBB8001604D0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		878A87BE2C366E72001604D0 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 		87BAB5942C32F73D0065AAE0 /* Rickpository.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickpository.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickpositoryApp.swift; sourceTree = "<group>"; };
 		87BAB5992C32F73D0065AAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				87BAB5C42C32FDEF0065AAE0 /* App */,
 				87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */,
 				87BAB59D2C32F73E0065AAE0 /* Preview Content */,
+				878A87BE2C366E72001604D0 /* codemagic.yaml */,
 			);
 			path = Rickpository;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878A87BF2C366E72001604D0 /* codemagic.yaml in Resources */,
 				87BAB59F2C32F73E0065AAE0 /* Preview Assets.xcassets in Resources */,
 				87BAB59C2C32F73E0065AAE0 /* Assets.xcassets in Resources */,
 			);

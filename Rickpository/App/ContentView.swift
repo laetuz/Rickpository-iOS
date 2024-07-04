@@ -20,15 +20,16 @@ struct ContentView: View {
                 TabItem(imageName: "house", title: "Home")
             }
             NavigationStack {
-                FavoriteView(viewModel: favViewModel)
-            }.tabItem {
-                TabItem(imageName: "star", title: "Favorite")
-            }
-            NavigationStack {
                 AboutView()
             }.tabItem {
                 TabItem(imageName: "person", title: "About")
             }
+            NavigationStack {
+                FavoriteView(viewModel: favViewModel)
+            }.tabItem {
+                TabItem(imageName: "star", title: "Favorite")
+            }
+
         }
     }
 }

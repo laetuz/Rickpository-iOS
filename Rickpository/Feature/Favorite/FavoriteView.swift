@@ -17,9 +17,7 @@ struct FavoriteView: View {
             else if viewModel.characters.isEmpty { emptyCategories }
             else { content }
         }.onAppear {
-            if self.viewModel.characters.count == 0 {
-                self.viewModel.getFavorite()
-            }
+            self.viewModel.getFavorite()
         }.navigationBarTitle(
             Text("Rickpository"),
             displayMode: .automatic

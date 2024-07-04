@@ -148,7 +148,6 @@
 				87BAB5C42C32FDEF0065AAE0 /* App */,
 				87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */,
 				87BAB59D2C32F73E0065AAE0 /* Preview Content */,
-				878A87BE2C366E72001604D0 /* codemagic.yaml */,
 			);
 			path = Rickpository;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 		87BAB5B62C32FC810065AAE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				878A87BE2C366E72001604D0 /* codemagic.yaml */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

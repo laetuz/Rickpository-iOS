@@ -40,7 +40,7 @@ extension FavoriteView {
     var emptyCategories: some View {
       CustomEmptyView(
         image: "assetNoFavorite",
-        title: "The meal category is empty"
+        title: "The character is empty"
       ).offset(y: 80)
     }
     

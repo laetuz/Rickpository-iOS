@@ -13,6 +13,8 @@
 		878A87B52C3581C1001604D0 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B42C3581C1001604D0 /* FavoriteInteractor.swift */; };
 		878A87B72C358576001604D0 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B62C358576001604D0 /* FavoriteRouter.swift */; };
 		878A87BB2C35CBB8001604D0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87BA2C35CBB8001604D0 /* AboutView.swift */; };
+		878A87BF2C366E72001604D0 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 878A87BE2C366E72001604D0 /* codemagic.yaml */; };
+		878A87C72C3673CA001604D0 /* RickpositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87C62C3673CA001604D0 /* RickpositoryTests.swift */; };
 		87BAB5982C32F73D0065AAE0 /* RickpositoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */; };
 		87BAB59A2C32F73D0065AAE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB5992C32F73D0065AAE0 /* ContentView.swift */; };
 		87BAB59C2C32F73E0065AAE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BAB59B2C32F73E0065AAE0 /* Assets.xcassets */; };
@@ -42,6 +44,16 @@
 		87BAB6052C332A820065AAE0 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BAB6042C332A820065AAE0 /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		878A87C82C3673CA001604D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87BAB58C2C32F73D0065AAE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87BAB5932C32F73D0065AAE0;
+			remoteInfo = Rickpository;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		87BAB5BC2C32FC810065AAE0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -62,6 +74,9 @@
 		878A87B42C3581C1001604D0 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 		878A87B62C358576001604D0 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		878A87BA2C35CBB8001604D0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		878A87BE2C366E72001604D0 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		878A87C42C3673CA001604D0 /* RickpositoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickpositoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		878A87C62C3673CA001604D0 /* RickpositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickpositoryTests.swift; sourceTree = "<group>"; };
 		87BAB5942C32F73D0065AAE0 /* Rickpository.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickpository.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BAB5972C32F73D0065AAE0 /* RickpositoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickpositoryApp.swift; sourceTree = "<group>"; };
 		87BAB5992C32F73D0065AAE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +105,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		878A87C12C3673CA001604D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87BAB5912C32F73D0065AAE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,10 +143,19 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		878A87C52C3673CA001604D0 /* RickpositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				878A87C62C3673CA001604D0 /* RickpositoryTests.swift */,
+			);
+			path = RickpositoryTests;
+			sourceTree = "<group>";
+		};
 		87BAB58B2C32F73D0065AAE0 = {
 			isa = PBXGroup;
 			children = (
 				87BAB5962C32F73D0065AAE0 /* Rickpository */,
+				878A87C52C3673CA001604D0 /* RickpositoryTests */,
 				87BAB5952C32F73D0065AAE0 /* Products */,
 				87BAB5B62C32FC810065AAE0 /* Frameworks */,
 			);
@@ -134,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				87BAB5942C32F73D0065AAE0 /* Rickpository.app */,
+				878A87C42C3673CA001604D0 /* RickpositoryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +193,7 @@
 		87BAB5B62C32FC810065AAE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				878A87BE2C366E72001604D0 /* codemagic.yaml */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,6 +368,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		878A87C32C3673CA001604D0 /* RickpositoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 878A87CA2C3673CA001604D0 /* Build configuration list for PBXNativeTarget "RickpositoryTests" */;
+			buildPhases = (
+				878A87C02C3673CA001604D0 /* Sources */,
+				878A87C12C3673CA001604D0 /* Frameworks */,
+				878A87C22C3673CA001604D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				878A87C92C3673CA001604D0 /* PBXTargetDependency */,
+			);
+			name = RickpositoryTests;
+			productName = RickpositoryTests;
+			productReference = 878A87C42C3673CA001604D0 /* RickpositoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		87BAB5932C32F73D0065AAE0 /* Rickpository */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87BAB5A22C32F73E0065AAE0 /* Build configuration list for PBXNativeTarget "Rickpository" */;
@@ -368,6 +419,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					878A87C32C3673CA001604D0 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 87BAB5932C32F73D0065AAE0;
+					};
 					87BAB5932C32F73D0065AAE0 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -392,15 +447,24 @@
 			projectRoot = "";
 			targets = (
 				87BAB5932C32F73D0065AAE0 /* Rickpository */,
+				878A87C32C3673CA001604D0 /* RickpositoryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		878A87C22C3673CA001604D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87BAB5922C32F73D0065AAE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878A87BF2C366E72001604D0 /* codemagic.yaml in Resources */,
 				87BAB59F2C32F73E0065AAE0 /* Preview Assets.xcassets in Resources */,
 				87BAB59C2C32F73E0065AAE0 /* Assets.xcassets in Resources */,
 			);
@@ -409,6 +473,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		878A87C02C3673CA001604D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				878A87C72C3673CA001604D0 /* RickpositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87BAB5902C32F73D0065AAE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,7 +518,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		878A87C92C3673CA001604D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87BAB5932C32F73D0065AAE0 /* Rickpository */;
+			targetProxy = 878A87C82C3673CA001604D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		878A87CB2C3673CA001604D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.neotica.RickpositoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rickpository.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rickpository";
+			};
+			name = Debug;
+		};
+		878A87CC2C3673CA001604D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.neotica.RickpositoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rickpository.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rickpository";
+			};
+			name = Release;
+		};
 		87BAB5A02C32F73E0065AAE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -581,6 +697,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,6 +726,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +743,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		878A87CA2C3673CA001604D0 /* Build configuration list for PBXNativeTarget "RickpositoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				878A87CB2C3673CA001604D0 /* Debug */,
+				878A87CC2C3673CA001604D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		87BAB58F2C32F73D0065AAE0 /* Build configuration list for PBXProject "Rickpository" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

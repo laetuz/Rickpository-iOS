@@ -40,12 +40,12 @@ class FavoriteViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func linkBuilder<Content: View>(
-        for char: CharacterModel,
-        @ViewBuilder content: () -> Content
-    ) -> some View {
-        NavigationLink(destination: router.toDetailView(for: char)) {
-            content()
-        }
-    }
+//    func linkBuilder<Content: View>(
+//        for char: CharacterModel,
+//        @ViewBuilder content: () -> Content
+//    ) -> some View {
+//        NavigationLink(destination: router.toDetailView(for: char)) {
+//            content()
+//        }
+//    }
 }

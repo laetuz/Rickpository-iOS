@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Core
 
 class HomeViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
@@ -42,7 +43,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func linkBuilder<Content: View>(
-        for char: CharacterModel,
+        for char: CharacterDomainModel,
         @ViewBuilder content: () -> Content
     ) -> some View {
         NavigationLink(destination: router.toDetailView(for: char)) {

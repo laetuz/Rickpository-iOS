@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import Character
+import Core
 
 struct HomeView: View {
-    @ObservedObject var viewModel: HomeViewModel
+//    @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var viewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
     
     var body: some View {
         ZStack {
             if viewModel.isLoading { loadingIndicator }
             else if viewModel.isError { errorIndicator }
-            else if viewModel.characters.isEmpty { emptyCategories }
+            else if viewModel.list.isEmpty { emptyCategories }
             else { content }
         }.onAppear {
-            if self.viewModel.characters.count == 0 {
-                self.viewModel.getCharacters()
+            if self.viewModel.list.count == 0 {
+                self.viewModel.getList(request: nil)
             }
         }.navigationBarTitle(
             Text("Rickpository"),
@@ -49,16 +52,25 @@ extension HomeView {
     var content: some View {
         ScrollView(.vertical, showsIndicators: false) {
             ForEach(
-                self.viewModel.characters,
+                self.viewModel.list,
                 id: \.id
             ) { char in
                 ZStack {
-                    self.viewModel.linkBuilder(for: char) {
+                    linkBuilder(for: char) {
                         CharacterRow(category: char)
                     }.buttonStyle(PlainButtonStyle())
-                }.padding(8)
+                }
             }
         }
+    }
+    
+    func linkBuilder<Content: View>(
+        for character: CharacterDomainModel,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(
+            destination: HomeRouter().toDetailView(for: character)
+        ) { content() }
     }
 }
 

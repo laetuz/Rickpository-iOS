@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87146BAD2C3ACC3000BE1A93 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 87146BAC2C3ACC3000BE1A93 /* Core */; };
+		87146BAF2C3ACC9500BE1A93 /* Character in Frameworks */ = {isa = PBXBuildFile; productRef = 87146BAE2C3ACC9500BE1A93 /* Character */; };
 		878A87AE2C356DDD001604D0 /* Custom View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87AD2C356DDD001604D0 /* Custom View.swift */; };
 		878A87B12C3580C8001604D0 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B02C3580C8001604D0 /* FavoriteView.swift */; };
 		878A87B32C358128001604D0 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878A87B22C358128001604D0 /* FavoriteViewModel.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		87146BA62C3AA90C00BE1A93 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		87146BA92C3ABDD900BE1A93 /* Character */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Character; sourceTree = "<group>"; };
 		878A87AD2C356DDD001604D0 /* Custom View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom View.swift"; sourceTree = "<group>"; };
 		878A87B02C3580C8001604D0 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		878A87B22C358128001604D0 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			files = (
 				87BAB6002C3312150065AAE0 /* CachedAsyncImage in Frameworks */,
 				87BAB5C02C32FCAA0065AAE0 /* RealmSwift in Frameworks */,
+				87146BAF2C3ACC9500BE1A93 /* Character in Frameworks */,
+				87146BAD2C3ACC3000BE1A93 /* Core in Frameworks */,
 				87BAB5C32C32FD4B0065AAE0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87146BA52C3AA8E700BE1A93 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				87146BA92C3ABDD900BE1A93 /* Character */,
+				87146BA62C3AA90C00BE1A93 /* Core */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		878A87AF2C3580B9001604D0 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +188,7 @@
 		87BAB5962C32F73D0065AAE0 /* Rickpository */ = {
 			isa = PBXGroup;
 			children = (
+				87146BA52C3AA8E700BE1A93 /* Modules */,
 				87BAB5EC2C3308910065AAE0 /* Feature */,
 				87BAB5C52C32FDF40065AAE0 /* Core */,
 				87BAB5C42C32FDEF0065AAE0 /* App */,
@@ -404,6 +420,8 @@
 				87BAB5BF2C32FCAA0065AAE0 /* RealmSwift */,
 				87BAB5C22C32FD4B0065AAE0 /* Alamofire */,
 				87BAB5FF2C3312150065AAE0 /* CachedAsyncImage */,
+				87146BAC2C3ACC3000BE1A93 /* Core */,
+				87146BAE2C3ACC9500BE1A93 /* Character */,
 			);
 			productName = Rickpository;
 			productReference = 87BAB5942C32F73D0065AAE0 /* Rickpository.app */;
@@ -800,6 +818,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		87146BAC2C3ACC3000BE1A93 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		87146BAE2C3ACC9500BE1A93 /* Character */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Character;
+		};
 		87BAB5BF2C32FCAA0065AAE0 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 87BAB5AD2C32FA9D0065AAE0 /* XCRemoteSwiftPackageReference "realm-swift" */;

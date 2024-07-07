@@ -7,9 +7,12 @@
 
 import SwiftUI
 import Realm
+import Core
+import Character
 
 struct ContentView: View {
-    @EnvironmentObject var homeViewModel: HomeViewModel
+    @EnvironmentObject var homeViewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
+   // @EnvironmentObject var homeViewModel: HomeViewModel
     @EnvironmentObject var favViewModel: FavoriteViewModel
     
     var body: some View {
@@ -34,9 +37,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
 
 struct TabItem: View {
 

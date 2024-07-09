@@ -10,29 +10,29 @@ import Combine
 
 protocol DetailUseCase {
 
-    func getCharacter() -> CharacterModel
-    func favCharacter() -> AnyPublisher<CharacterModel, Error>
+    func getCharacter() -> CharacterDomainModel
+    func favCharacter() -> AnyPublisher<CharacterDomainModel, Error>
 
 }
 
 class DetailInteractor: DetailUseCase {
 
     private let repository: RickRepositoryProtocol
-    private let character: CharacterModel
+    private let character: CharacterDomainModel
 
     required init(
         repository: RickRepositoryProtocol,
-        character: CharacterModel
+        character: CharacterDomainModel
     ) {
         self.repository = repository
         self.character = character
     }
 
-    func getCharacter() -> CharacterModel {
+    func getCharacter() -> CharacterDomainModel {
         return character
     }
     
-    func favCharacter() -> AnyPublisher<CharacterModel, any Error> {
+    func favCharacter() -> AnyPublisher<CharacterDomainModel, any Error> {
         return repository.favCharacter(by: character.id)
     }
 }

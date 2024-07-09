@@ -16,19 +16,19 @@ protocol LocalDataSourceProtocol: AnyObject {
     func getFavoriteCharacters() -> AnyPublisher<[CharacterEntity], Error>
 }
 
-final class LocalDataSource: NSObject {
+final class LocalDataSourceCore: NSObject {
     private let realm: Realm?
     
     private init(realm: Realm?) {
         self.realm = realm
     }
     
-    static let sharedInstance: (Realm?) -> LocalDataSource = { realmDb in
-        return LocalDataSource(realm: realmDb)
+    static let sharedInstance: (Realm?) -> LocalDataSourceCore = { realmDb in
+        return LocalDataSourceCore(realm: realmDb)
     }
 }
 
-extension LocalDataSource: LocalDataSourceProtocol {
+extension LocalDataSourceCore: LocalDataSourceProtocol {
     func getCharacters() -> AnyPublisher<[CharacterEntity], Error> {
         return Future<[CharacterEntity], Error> { completion in
             if let realm = self.realm {

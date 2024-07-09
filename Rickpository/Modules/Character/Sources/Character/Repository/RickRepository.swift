@@ -9,18 +9,18 @@ import Foundation
 import Combine
 
 protocol RickRepositoryProtocol {
-    func getCharacters() -> AnyPublisher<[CharacterModel], Error>
-    func favCharacter(by id: Int) -> AnyPublisher<CharacterModel, Error>
-    func getFavorite() -> AnyPublisher<[CharacterModel], Error>
+    func getCharacters() -> AnyPublisher<[CharacterDomainModel], Error>
+    func favCharacter(by id: Int) -> AnyPublisher<CharacterDomainModel, Error>
+    func getFavorite() -> AnyPublisher<[CharacterDomainModel], Error>
 }
 
 final class RickRepository: NSObject {
-    typealias RickInstance = (LocalDataSource, RemoteDataSource) -> RickRepository
+    typealias RickInstance = (LocalDataSourceCore, RemoteDataSource) -> RickRepository
     
     fileprivate let remote: RemoteDataSource
-    fileprivate let local: LocalDataSource
+    fileprivate let local: LocalDataSourceCore
     
-    private init(local: LocalDataSource, remote: RemoteDataSource) {
+    private init(local: LocalDataSourceCore, remote: RemoteDataSource) {
         self.local = local
         self.remote = remote
     }
@@ -31,9 +31,9 @@ final class RickRepository: NSObject {
 }
 
 extension RickRepository: RickRepositoryProtocol {
-    func getCharacters() -> AnyPublisher<[CharacterModel], any Error> {
+    func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return self.local.getCharacters()
-            .flatMap { result -> AnyPublisher<[CharacterModel], Error> in
+            .flatMap { result -> AnyPublisher<[CharacterDomainModel], Error> in
                 if result.isEmpty {
                     return self.remote.getCharacters()
                         .map { CharacterMapper.mapCharacterResponsesToEntities(input: $0)}
@@ -53,13 +53,13 @@ extension RickRepository: RickRepositoryProtocol {
         
     }
     
-    func favCharacter(by id: Int) -> AnyPublisher<CharacterModel, any Error> {
+    func favCharacter(by id: Int) -> AnyPublisher<CharacterDomainModel, any Error> {
         return self.local.addFavorite(by: id)
             .map { CharacterMapper.mapCharacterEntitiesToDomainsFav(input: $0)}
             .eraseToAnyPublisher()
     }
     
-    func getFavorite() -> AnyPublisher<[CharacterModel], any Error> {
+    func getFavorite() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return self.local.getFavoriteCharacters()
             .map { CharacterMapper.mapCharacterEntitiesToDomains(input: $0)}
             .eraseToAnyPublisher()

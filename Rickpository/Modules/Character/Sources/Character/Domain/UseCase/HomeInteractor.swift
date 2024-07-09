@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol HomeUseCase {
-    func getCharacters() -> AnyPublisher<[CharacterModel], Error>
+    func getCharacters() -> AnyPublisher<[CharacterDomainModel], Error>
 }
 
 class HomeInteractor: HomeUseCase {
@@ -19,7 +19,7 @@ class HomeInteractor: HomeUseCase {
         self.repo = repo
     }
     
-    func getCharacters() -> AnyPublisher<[CharacterModel], any Error> {
+    func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return repo.getCharacters()
     }
 }

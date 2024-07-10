@@ -7,15 +7,16 @@
 
 import Foundation
 import Combine
+import Core
 
-protocol RickRepositoryProtocol {
+public protocol RickRepositoryProtocol {
     func getCharacters() -> AnyPublisher<[CharacterDomainModel], Error>
     func favCharacter(by id: Int) -> AnyPublisher<CharacterDomainModel, Error>
     func getFavorite() -> AnyPublisher<[CharacterDomainModel], Error>
 }
 
-final class RickRepository: NSObject {
-    typealias RickInstance = (LocalDataSourceCore, RemoteDataSource) -> RickRepository
+public final class RickRepository: NSObject {
+    public typealias RickInstance = (LocalDataSourceCore, RemoteDataSource) -> RickRepository
     
     fileprivate let remote: RemoteDataSource
     fileprivate let local: LocalDataSourceCore
@@ -25,13 +26,13 @@ final class RickRepository: NSObject {
         self.remote = remote
     }
     
-    static let sharedInstance: RickInstance = { localRepo, remoteRepo in
+    public static let sharedInstance: RickInstance = { localRepo, remoteRepo in
         return RickRepository(local: localRepo, remote: remoteRepo)
     }
 }
 
 extension RickRepository: RickRepositoryProtocol {
-    func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
+    public func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return self.local.getCharacters()
             .flatMap { result -> AnyPublisher<[CharacterDomainModel], Error> in
                 if result.isEmpty {
@@ -53,13 +54,13 @@ extension RickRepository: RickRepositoryProtocol {
         
     }
     
-    func favCharacter(by id: Int) -> AnyPublisher<CharacterDomainModel, any Error> {
+    public func favCharacter(by id: Int) -> AnyPublisher<CharacterDomainModel, any Error> {
         return self.local.addFavorite(by: id)
             .map { CharacterMapper.mapCharacterEntitiesToDomainsFav(input: $0)}
             .eraseToAnyPublisher()
     }
     
-    func getFavorite() -> AnyPublisher<[CharacterDomainModel], any Error> {
+    public func getFavorite() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return self.local.getFavoriteCharacters()
             .map { CharacterMapper.mapCharacterEntitiesToDomains(input: $0)}
             .eraseToAnyPublisher()

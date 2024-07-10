@@ -2,30 +2,39 @@
 //  FavoriteViewModel.swift
 //  Rickpository
 //
-//  Created by Ryo Martin on 03/07/24.
+//  Created by Ryo Martin on 09/07/24.
 //
 
 import SwiftUI
 import Combine
+import Character
+import Core
+import Favorite
 
 class FavoriteViewModel: ObservableObject {
-    private var cancellables: Set<AnyCancellable> = []
+    public var cancellables: Set<AnyCancellable> = []
     private let router = FavoriteRouter()
-    private let useCase: FavoriteUseCase
     
-    @Published var characters: [CharacterModel] = []
-    @Published var errorMessage = ""
-    @Published var isLoading = false
-    @Published var isError = false
+    private let favoriteRepo: any FavoriteRepositoryProtocol
     
-    init(useCase: FavoriteUseCase) {
-        self.useCase = useCase
+    @Published public var characters: [CharacterDomainModel] = []
+    @Published public var errorMessage = ""
+    @Published public var isLoading = false
+    @Published public var isError = false
+    
+    init(favoriteRepo: any FavoriteRepositoryProtocol) {
+        self.favoriteRepo = favoriteRepo
+        
+//        isLoading = favoriteRepo.isLoading
+//        isError = favoriteRepo.isError
+//        characters = favoriteRepo.characters
     }
     
-    func getFavorite() {
+    public func getFavorite() {
         isLoading = true
-        useCase.getCharacters()
-            .receive(on: RunLoop.main)
+        favoriteRepo.getFavorite()
+
+       // favoriteRepo.characters.publisher.receive(on: RunLoop.main).assign(to: \.characters, on: self).store(in: &<#T##RangeReplaceableCollection#>)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -40,12 +49,12 @@ class FavoriteViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-//    func linkBuilder<Content: View>(
-//        for char: CharacterModel,
-//        @ViewBuilder content: () -> Content
-//    ) -> some View {
-//        NavigationLink(destination: router.toDetailView(for: char)) {
-//            content()
-//        }
-//    }
+    public func linkBuilder<Content: View>(
+        for char: CharacterDomainModel,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(destination: router.toDetailView(for: char)) {
+            content()
+        }
+    }
 }

@@ -12,13 +12,13 @@ import Character
 
 class HomeRouter {
     func toDetailView(for character: CharacterDomainModel) -> some View {
-        let useCase: Interactor<
-            Any,
-            [CharacterDomainModel],
-            GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>> = Injection.init().provideCharacter()
-       // let detailUseCase = Injection.init().provideDetail(character: character)
-        //let viewModel = DetailViewModel(detailUseCase: detailUseCase)
-        let viewModel = GetListPresenter(_useCase: useCase)
+//        let useCase: Interactor<
+//            Any,
+//            [CharacterDomainModel],
+//            GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>> = Injection.init().provideCharacter()
+        let detailUseCase = Injection.init().provideDetail(character: character)
+        let viewModel = DetailViewModel(detailUseCase: detailUseCase)
+//        let viewModel = GetListPresenter(_useCase: useCase)
         return DetailView(viewModel: viewModel, character: character)
     }
 }

@@ -10,18 +10,18 @@ import Character
 import Core
 
 struct HomeView: View {
-//    @ObservedObject var viewModel: HomeViewModel
-    @ObservedObject var viewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
+    @ObservedObject var viewModel: HomeViewModel
+//    @ObservedObject var viewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
     
     var body: some View {
         ZStack {
             if viewModel.isLoading { loadingIndicator }
             else if viewModel.isError { errorIndicator }
-            else if viewModel.list.isEmpty { emptyCategories }
+            else if viewModel.characters.isEmpty { emptyCategories }
             else { content }
         }.onAppear {
-            if self.viewModel.list.count == 0 {
-                self.viewModel.getList(request: nil)
+            if self.viewModel.characters.count == 0 {
+                self.viewModel.getCharacters()//(request: nil)
             }
         }.navigationBarTitle(
             Text("Rickpository"),
@@ -52,7 +52,7 @@ extension HomeView {
     var content: some View {
         ScrollView(.vertical, showsIndicators: false) {
             ForEach(
-                self.viewModel.list,
+                self.viewModel.characters,
                 id: \.id
             ) { char in
                 ZStack {

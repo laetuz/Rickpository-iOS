@@ -7,19 +7,20 @@
 
 import Foundation
 import Combine
+import Core
 
-protocol FavoriteUseCase {
+public protocol FavoriteUseCase {
     func getCharacters() -> AnyPublisher<[CharacterDomainModel], Error>
 }
 
-class FavoriteInteractor: FavoriteUseCase {
+public class FavoriteInteractor: FavoriteUseCase {
     private let repo: RickRepositoryProtocol
     
-    required init(repo: RickRepositoryProtocol) {
+    public init(repo: RickRepositoryProtocol) {
         self.repo = repo
     }
     
-    func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
+    public func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return repo.getFavorite()
     }
 }

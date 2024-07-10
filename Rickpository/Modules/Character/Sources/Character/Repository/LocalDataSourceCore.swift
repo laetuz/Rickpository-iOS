@@ -8,28 +8,29 @@
 import Foundation
 import RealmSwift
 import Combine
+import Core
 
-protocol LocalDataSourceProtocol: AnyObject {
+public protocol LocalDataSourceProtocol: AnyObject {
     func getCharacters() -> AnyPublisher<[CharacterEntity], Error>
     func addCharacters(from characters: [CharacterEntity]) -> AnyPublisher<Bool, Error>
     func addFavorite(by id: Int) -> AnyPublisher<CharacterEntity, Error>
     func getFavoriteCharacters() -> AnyPublisher<[CharacterEntity], Error>
 }
 
-final class LocalDataSourceCore: NSObject {
-    private let realm: Realm?
+public final class LocalDataSourceCore: NSObject {
+    let realm: Realm?
     
-    private init(realm: Realm?) {
+    init(realm: Realm?) {
         self.realm = realm
     }
     
-    static let sharedInstance: (Realm?) -> LocalDataSourceCore = { realmDb in
+    public static let sharedInstance: (Realm?) -> LocalDataSourceCore = { realmDb in
         return LocalDataSourceCore(realm: realmDb)
     }
 }
 
 extension LocalDataSourceCore: LocalDataSourceProtocol {
-    func getCharacters() -> AnyPublisher<[CharacterEntity], Error> {
+    public func getCharacters() -> AnyPublisher<[CharacterEntity], Error> {
         return Future<[CharacterEntity], Error> { completion in
             if let realm = self.realm {
                 let characters: Results<CharacterEntity> = {
@@ -43,7 +44,7 @@ extension LocalDataSourceCore: LocalDataSourceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func addCharacters(from characters: [CharacterEntity]) -> AnyPublisher<Bool, Error> {
+    public func addCharacters(from characters: [CharacterEntity]) -> AnyPublisher<Bool, Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
                 do {
@@ -62,7 +63,7 @@ extension LocalDataSourceCore: LocalDataSourceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func addFavorite(by id: Int) -> AnyPublisher<CharacterEntity, Error> {
+    public func addFavorite(by id: Int) -> AnyPublisher<CharacterEntity, Error> {
         return Future<CharacterEntity, Error> { completion in
             if let realm = self.realm, let charEntity = {
                 realm.objects(CharacterEntity.self).filter("id = \(id)")
@@ -81,7 +82,7 @@ extension LocalDataSourceCore: LocalDataSourceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func getFavoriteCharacters() -> AnyPublisher<[CharacterEntity], Error> {
+    public func getFavoriteCharacters() -> AnyPublisher<[CharacterEntity], Error> {
         return Future<[CharacterEntity], Error> { completion in
             if let realm = self.realm {
                 let entities = {
@@ -99,7 +100,7 @@ extension LocalDataSourceCore: LocalDataSourceProtocol {
 }
 
 extension Results {
-    func toArray<T>(ofType: T.Type) -> [T] {
+    public func toArray<T>(ofType: T.Type) -> [T] {
         var array = [T]()
         for index in 0 ..< count {
             if let result = self [index] as? T {

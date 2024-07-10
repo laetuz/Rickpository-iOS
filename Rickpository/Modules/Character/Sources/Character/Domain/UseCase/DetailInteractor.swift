@@ -7,20 +7,21 @@
 
 import Foundation
 import Combine
+import Core
 
-protocol DetailUseCase {
+public protocol DetailUseCase {
 
     func getCharacter() -> CharacterDomainModel
     func favCharacter() -> AnyPublisher<CharacterDomainModel, Error>
 
 }
 
-class DetailInteractor: DetailUseCase {
+public class DetailInteractor: DetailUseCase {
 
     private let repository: RickRepositoryProtocol
     private let character: CharacterDomainModel
 
-    required init(
+    public init(
         repository: RickRepositoryProtocol,
         character: CharacterDomainModel
     ) {
@@ -28,11 +29,11 @@ class DetailInteractor: DetailUseCase {
         self.character = character
     }
 
-    func getCharacter() -> CharacterDomainModel {
+    public func getCharacter() -> CharacterDomainModel {
         return character
     }
     
-    func favCharacter() -> AnyPublisher<CharacterDomainModel, any Error> {
+    public func favCharacter() -> AnyPublisher<CharacterDomainModel, any Error> {
         return repository.favCharacter(by: character.id)
     }
 }

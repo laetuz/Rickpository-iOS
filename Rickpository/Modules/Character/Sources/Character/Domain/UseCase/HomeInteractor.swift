@@ -7,19 +7,20 @@
 
 import Foundation
 import Combine
+import Core
 
-protocol HomeUseCase {
+public protocol HomeUseCase {
     func getCharacters() -> AnyPublisher<[CharacterDomainModel], Error>
 }
 
-class HomeInteractor: HomeUseCase {
+public class HomeInteractor: HomeUseCase {
     private let repo: RickRepositoryProtocol
     
-    required init(repo: RickRepositoryProtocol) {
+    public init(repo: RickRepositoryProtocol) {
         self.repo = repo
     }
     
-    func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
+    public func getCharacters() -> AnyPublisher<[CharacterDomainModel], any Error> {
         return repo.getCharacters()
     }
 }

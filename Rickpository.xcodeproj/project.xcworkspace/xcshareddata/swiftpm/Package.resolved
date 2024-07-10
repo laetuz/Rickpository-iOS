@@ -1,5 +1,5 @@
 {
-  "originHash" : "4dcbf45dc54d9053d0d88980abccea0fc49e79d5c5d577708c47f00429311f71",
+  "originHash" : "78b6032342acaead2e04a24dd1b0709264e42ccd99aab5980b145768cab6823d",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
         "version" : "5.9.1"
+      }
+    },
+    {
+      "identity" : "core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/laetuz/Core.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cd6000df0b20c945aecdd79fde630bb775b48b9e"
       }
     },
     {

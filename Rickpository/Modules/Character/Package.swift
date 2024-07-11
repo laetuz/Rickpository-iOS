@@ -26,7 +26,6 @@ let package = Package(
             name: "Character",
             dependencies: [
               .product(name: "RealmSwift", package: "realm-swift"),
-              "Core",
               "Alamofire",
               .product(name: "Core", package: "core")
             ]

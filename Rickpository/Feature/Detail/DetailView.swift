@@ -7,9 +7,14 @@
 
 import SwiftUI
 import CachedAsyncImage
+import Core
+import Character
 
 struct DetailView: View {
+    //@ObservedObject var viewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
     @ObservedObject var viewModel: DetailViewModel
+    
+    var character: CharacterDomainModel
     
     var body: some View {
         ZStack {
@@ -22,7 +27,7 @@ struct DetailView: View {
                     VStack() {
                         imageCategory
                         Spacer()
-                        if viewModel.character.favorite {
+                        if self.viewModel.character.favorite == true {
                             CustomIcon(imageName: "heart.fill", title: "Favorited")
                                 .onTapGesture {
                                     self.viewModel.addFavorite()
@@ -44,7 +49,7 @@ struct DetailView: View {
                     
                 }
             }
-        }.navigationBarTitle(Text(self.viewModel.character.name), displayMode: .inline)
+        }.navigationBarTitle(Text(self.character.name), displayMode: .inline)
     }
 }
 
@@ -65,7 +70,7 @@ extension DetailView {
     }
 
     var imageCategory: some View {
-        CachedAsyncImage(url: URL(string: self.viewModel.character.image)) { image in
+        CachedAsyncImage(url: URL(string: self.character.image)) { image in
             image.resizable()
         } placeholder: {
             ProgressView()
@@ -78,7 +83,7 @@ extension DetailView {
     }
     
     var content: some View {
-        let char = viewModel.character
+        let char = character
         return VStack(alignment: .leading, spacing: 0) {
 
             mediumTitle("ID").padding([.top])
@@ -90,7 +95,7 @@ extension DetailView {
             mediumTitle("Status").padding([.top])
             Text("\(char.status)")
             mediumTitle("Origin").padding([.top])
-            Text("\(char.origin?.name ?? "Unknown")")
+            Text("\(char.origin.name ?? "Unknown")")
         }
     }
 }

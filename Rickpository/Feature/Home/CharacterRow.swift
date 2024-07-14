@@ -9,10 +9,12 @@ import Foundation
 
 import SwiftUI
 import CachedAsyncImage
+import Core
+import Character
 
 struct CharacterRow: View {
 
-    var category: CharacterModel
+    var category: CharacterDomainModel
     var body: some View {
         VStack {
             imageCategory

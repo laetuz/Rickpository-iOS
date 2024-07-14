@@ -8,24 +8,25 @@
 import Foundation
 import Alamofire
 import Combine
+import Core
 
-protocol RemoteDataSourceProtocol: AnyObject {
+public protocol RemoteDataSourceProtocol: AnyObject {
 
   func getCharacters() -> AnyPublisher<[CharacterResponse], Error>
 
 }
 
-final class RemoteDataSource: NSObject {
+public final class RemoteDataSource: NSObject {
 
-  private override init() { }
+  override init() { }
 
-  static let sharedInstance: RemoteDataSource =  RemoteDataSource()
+  public static let sharedInstance: RemoteDataSource =  RemoteDataSource()
 
 }
 
 extension RemoteDataSource: RemoteDataSourceProtocol {
 
-  func getCharacters() -> AnyPublisher<[CharacterResponse], Error> {
+    public func getCharacters() -> AnyPublisher<[CharacterResponse], Error> {
     return Future<[CharacterResponse], Error> { completion in
         if let url = URL(string: Endpoints.Gets.characters.url) {
         AF.request(url)

@@ -7,12 +7,16 @@
 
 import Foundation
 import RealmSwift
+import Core
+import Character
+import Favorite
 
 final class Injection: NSObject {
-    private func provideRepository() -> RickRepositoryProtocol {
-        let realm = try? Realm()
+    private let realm = try? Realm()
+    
+    func provideRepository() -> RickRepositoryProtocol {
         
-        let local: LocalDataSource = LocalDataSource.sharedInstance(realm)
+        let local: LocalDataSourceCore = LocalDataSourceCore.sharedInstance(realm)
         let remote: RemoteDataSource = RemoteDataSource.sharedInstance
         
         return RickRepository.sharedInstance(local, remote)
@@ -23,7 +27,7 @@ final class Injection: NSObject {
         return HomeInteractor(repo: repo)
     }
     
-    func provideDetail(character: CharacterModel) -> DetailUseCase {
+    func provideDetail(character: CharacterDomainModel) -> DetailUseCase {
       let repository = provideRepository()
       return DetailInteractor(repository: repository, character: character)
     }
@@ -31,5 +35,9 @@ final class Injection: NSObject {
     func provideFavorite() -> FavoriteUseCase {
         let repo = provideRepository()
         return FavoriteInteractor(repo: repo)
+    }
+    
+    func provideFavoriteRepo() -> any FavoriteRepositoryProtocol {
+        return FavoriteRepository(useCase: provideFavorite())
     }
 }

@@ -1,17 +1,17 @@
 //
-//  CharacterResponse.swift
-//  Rickpository
+//  File.swift
+//  
 //
-//  Created by Ryo Martin on 01/07/24.
+//  Created by Ryo Martin on 07/07/24.
 //
 
 import Foundation
 
-struct CharactersResponse: Decodable {
+public struct CharactersResponse: Decodable {
     let results: [CharacterResponse]
 }
 
-struct CharacterResponse: Decodable {
+public struct CharacterResponse: Decodable {
     
     let id: Int?
     let name: String?
@@ -31,7 +31,7 @@ struct CharacterResponse: Decodable {
         case origin
     }
     
-    struct OriginResponse: Decodable {
+    public struct OriginResponse: Decodable {
         let name: String?
         let url: String?
         

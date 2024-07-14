@@ -7,13 +7,15 @@
 
 import SwiftUI
 import Combine
+import Core
+import Character
 
 class HomeViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     private let router = HomeRouter()
     private let useCase: HomeUseCase
     
-    @Published var characters: [CharacterModel] = []
+    @Published var characters: [CharacterDomainModel] = []
     @Published var errorMessage = ""
     @Published var isLoading = false
     @Published var isError = false
@@ -42,7 +44,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func linkBuilder<Content: View>(
-        for char: CharacterModel,
+        for char: CharacterDomainModel,
         @ViewBuilder content: () -> Content
     ) -> some View {
         NavigationLink(destination: router.toDetailView(for: char)) {

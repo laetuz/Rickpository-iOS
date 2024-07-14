@@ -11,19 +11,20 @@ import Character
 
 let injection = Injection()
 
-let characterUseCase: Interactor<
-    Any,
-    [CharacterDomainModel],
-    GetCharactersRepository<
-        GetCharactersLocalDataSource,
-        GetCharactersRemoteDataSource,
-        CharacterTransformer>
-> = injection.provideCharacter()
+//let characterUseCase: Interactor<
+//    Any,
+//    [CharacterDomainModel],
+//    GetCharactersRepository<
+//        GetCharactersLocalDataSource,
+//        GetCharactersRemoteDataSource,
+//        CharacterTransformer>
+//> = injection.provideCharacter()
 
 @main
 struct RickpositoryApp: App {
-    let homeViewModel = GetListPresenter(_useCase: characterUseCase)
-    let favViewModel = FavoriteViewModel(useCase: Injection.init().provideFavorite())
+    let homeViewModel = HomeViewModel(useCase: Injection.init().provideHome()) //GetListPresenter(_useCase: characterUseCase)
+    let favViewModel = FavoriteViewModel(favoriteRepo: Injection.init().provideFavoriteRepo())
+    
     
     var body: some Scene {
         WindowGroup {

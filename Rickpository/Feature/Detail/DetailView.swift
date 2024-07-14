@@ -11,7 +11,8 @@ import Core
 import Character
 
 struct DetailView: View {
-    @ObservedObject var viewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
+    //@ObservedObject var viewModel: GetListPresenter<Any, CharacterDomainModel, Interactor<Any, [CharacterDomainModel], GetCharactersRepository<GetCharactersLocalDataSource, GetCharactersRemoteDataSource, CharacterTransformer>>>
+    @ObservedObject var viewModel: DetailViewModel
     
     var character: CharacterDomainModel
     
@@ -26,15 +27,15 @@ struct DetailView: View {
                     VStack() {
                         imageCategory
                         Spacer()
-                        if character.favorite {
+                        if self.viewModel.character.favorite == true {
                             CustomIcon(imageName: "heart.fill", title: "Favorited")
                                 .onTapGesture {
-                                  //  self.viewModel.addFavorite()
+                                    self.viewModel.addFavorite()
                                 }
                         } else {
                             CustomIcon(imageName: "heart", title: "Favorite")
                                 .onTapGesture {
-                                 //   self.viewModel.addFavorite()
+                                    self.viewModel.addFavorite()
                                 }
                         }
                         Spacer()

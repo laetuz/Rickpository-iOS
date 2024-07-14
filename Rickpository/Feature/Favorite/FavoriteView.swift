@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Favorite
 
 struct FavoriteView: View {
     @ObservedObject var viewModel: FavoriteViewModel
@@ -50,14 +51,11 @@ extension FavoriteView {
                 self.viewModel.characters,
                 id: \.id
             ) { char in
-//                ZStack {
-//                    self.viewModel.linkBuilder(for: char) {
-//                        CharacterRow(category: char)
-//                    }.buttonStyle(PlainButtonStyle())
-//                }.padding(8)
-//                ZStack {
-//                    CharacterRow(category: char)
-//                }.buttonStyle(PlainButtonStyle())
+                ZStack {
+                    self.viewModel.linkBuilder(for: char) {
+                        CharacterRow(category: char)
+                    }.buttonStyle(PlainButtonStyle())
+                }.padding(8)
             }
         }
     }
